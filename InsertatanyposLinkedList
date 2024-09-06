@@ -1,0 +1,81 @@
+class Node:
+    def __init__(self,k):
+        self.key=k 
+        self.next=None
+head = Node(10)
+head.next= Node(20)
+head.next.next= Node(30)
+head.next.next.next= Node(40)
+
+def printList(head):
+    i=head
+    while i != None:
+        print(i.key,end=" ")
+        i=i.next
+    print()
+
+def insertatanyPosLinkedList(head,pos,key):
+    temp = Node(key)
+    if pos == 1:
+        temp.next = head
+        return temp
+    current = head
+    currentPosition = 1
+    
+    while current != None and currentPosition < pos- 1:
+        current = current.next
+        currentPosition += 1
+    if current is None:
+        print("Position out of range")
+        return head
+    temp.next = current.next
+    current.next = temp 
+    return head
+print("Previous List:")
+printList(head)
+head=insertatanyPosLinkedList(head,3,5)
+print("New List:")
+printList(head)
+
+
+
+"OR OR OR"
+
+class Node:
+    def __init__(self,k):
+        self.key=k 
+        self.next=None
+head = Node(10)
+head.next= Node(20)
+head.next.next= Node(30)
+head.next.next.next= Node(40)
+
+def printList(head):
+    i=head
+    while i != None:
+        print(i.key,end=" ")
+        i=i.next
+    print()
+
+def insertatanyPosLinkedList(head,pos,key):
+    temp = Node(key)
+    if pos == 1:
+        temp.next = head
+        return temp
+    current = head
+    
+    
+    for i in range (pos-2):
+        current=current.next
+        if current==None:
+            return head
+    temp.next = current.next
+    current.next = temp 
+    return head
+print("Previous List:")
+printList(head)
+head=insertatanyPosLinkedList(head,3,5)
+print("New List:")
+printList(head)
+
+    
