@@ -1,0 +1,60 @@
+class Node:
+    def __init__(self,k):
+        self.key=k 
+        self.next=None
+head = Node(10)
+head.next= Node(20)
+head.next.next= Node(30)
+head.next.next.next= Node(40)
+
+def printList(head):
+    i=head
+    while i != None:
+        print(i.key,end=",")
+        i=i.next
+    print()
+
+def reverseLinkedList(head):
+    if head==None or head.next==None:
+        return head
+    rest_head=reverseLinkedList(head.next)
+    rest_tail=head.next
+    rest_tail.next=head
+    head.next=None
+    return rest_head
+print("Previous List:" , end=" ")
+printList(head)
+head=reverseLinkedList(head)
+print("New List:", end=" ")
+printList(head)
+
+
+"OR OR OR OR"
+
+class Node:
+    def __init__(self,k):
+        self.key=k 
+        self.next=None
+head = Node(10)
+head.next= Node(20)
+head.next.next= Node(30)
+head.next.next.next= Node(40)
+
+def printList(head):
+    i=head
+    while i != None:
+        print(i.key,end=",")
+        i=i.next
+    print()
+
+def reverseLinkedList(curr,prev=None):
+    if curr==None :
+        return prev
+    next=curr.next
+    curr.next=prev
+    return reverseLinkedList(next,curr)
+print("Previous List:" , end=" ")
+printList(head)
+head=reverseLinkedList(head)
+print("New List:", end=" ")
+printList(head)

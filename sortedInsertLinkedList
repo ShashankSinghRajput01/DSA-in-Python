@@ -1,0 +1,34 @@
+class Node:
+    def __init__(self,k):
+        self.key=k 
+        self.next=None
+head = Node(10)
+head.next= Node(20)
+head.next.next= Node(30)
+head.next.next.next= Node(40)
+
+def printList(head):
+    i=head
+    while i != None:
+        print(i.key,end=" ")
+        i=i.next
+    print()
+
+def insertSortedLinkedList(head,key):
+    newNode = Node(key)
+    if head==None or head.key>=newNode.key:
+        newNode.next=head
+        return newNode
+    curr=head
+    while curr.next!=None and curr.next.key<newNode.key:
+        curr=curr.next
+    newNode.next=curr.next
+    curr.next=newNode
+    return head    
+    
+
+print("Previous List:")
+printList(head)
+head=insertSortedLinkedList(head,50)
+print("New List:")
+printList(head)
