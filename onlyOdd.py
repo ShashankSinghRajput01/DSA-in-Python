@@ -5,6 +5,16 @@ def onlyOdd(l):
             return x
     else:
         return None
-l=[1,2,3,4,5,5,6]
+l=[10,10,20,30,30,20,40]
 print(onlyOdd(l))
         
+
+"OR,OR,OR,OR"
+
+def findOdd(l):
+    res=0
+    for x in l:
+        res=res ^ x
+    return res
+l=[10,20,20,30,10]
+print(findOdd(l))
