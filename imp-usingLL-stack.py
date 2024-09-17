@@ -28,7 +28,7 @@ class MyStack:
             return math.inf
         res=self.head.data
         self.head=self.head.next
-        self.sz+=1
+        self.sz-=1
         return res
     
 s=MyStack()
